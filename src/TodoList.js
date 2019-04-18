@@ -1,4 +1,4 @@
-import React, { PureComponent, Component } from 'react';
+import React, { Component } from 'react';
 import Todo from './Todo';
 
 //TODO: Add form, add uuid
@@ -13,7 +13,6 @@ class TodoList extends Component {
         { name: 'Party', id: 4 }
       ]
     };
-    // this.removeTodo = this.removeTodo.bind(this);
   }
 
   removeTodo = name => {
@@ -25,7 +24,6 @@ class TodoList extends Component {
 
   render() {
     const list = this.state.todos.map(todo => {
-      console.log(this);
       return (
         <Todo
           name={todo.name}
