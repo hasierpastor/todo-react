@@ -1,12 +1,15 @@
 import React, { PureComponent, Component } from 'react';
 
 class Todo extends PureComponent {
+  remove = () => {
+    this.props.removeTodo(this.props.name);
+  };
   render() {
     console.log(this.props);
     return (
       <li key={this.props.id}>
         {this.props.name}
-        <button onClick={this.props.remove}>X</button>
+        <button onClick={this.remove}>X</button>
       </li>
     );
   }
