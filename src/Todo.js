@@ -7,7 +7,7 @@ class Todo extends PureComponent {
   render() {
     console.log(this.props);
     return (
-      <li key={this.props.id}>
+      <li>
         {this.props.name}
         <button onClick={this.remove}>X</button>
       </li>

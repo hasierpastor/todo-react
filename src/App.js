@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 import TodoList from './TodoList';
+const uuidv4 = require('uuid/v4');
 
 class App extends Component {
   constructor(props) {
+    super(props);
     this.state = {
       todos: [],
-      todo: ''
+      name: ''
     };
   }
 
   handleSubmit = evt => {
     evt.preventDefault();
     this.setState({
-      todos: [...this.state.todos, this.state.todo],
-      todo: ''
+      todos: [...this.state.todos, { name: this.state.name, id: uuidv4() }],
+      name: ''
     });
   };
 
@@ -32,13 +34,13 @@ class App extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="todo" />
+          <label htmlFor="name">Enter Todo</label>
           <input
             onChange={this.handleChange}
-            value={this.state.todo}
-            name="todo"
-            id="todo"
+            value={this.state.name}
+            name="name"
           />
+          <button>Submit></button>
         </form>
         <TodoList removeTodo={this.removeTodo} todos={this.state.todos} />
       </div>
