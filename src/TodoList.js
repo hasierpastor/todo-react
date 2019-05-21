@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 
+//TODO: add memoization?
+
 const TodoList = props => {
   let { todos, removeTodo } = props;
   const list = todos.map(todo => {

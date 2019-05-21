@@ -5,7 +5,6 @@ class Todo extends PureComponent {
     this.props.removeTodo(this.props.name);
   };
   render() {
-    console.log(this.props);
     return (
       <li>
         {this.props.name}
